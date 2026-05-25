@@ -57,6 +57,7 @@ mqttClient.on('message', async (topic, message) => {
                 // AGGIORNA ESISTENTE
                 user.ingredienti[ingredienteIndex].peso = peso;
                 user.ingredienti[ingredienteIndex].data = new Date();
+                user.markModified('ingredienti');
                 console.log(`⚖️ Aggiornato: ${prodottoPulito} -> ${peso}g`);
             } else {
                 // AGGIUNGI NUOVO (Se lo avevi cancellato, rientra qui)
